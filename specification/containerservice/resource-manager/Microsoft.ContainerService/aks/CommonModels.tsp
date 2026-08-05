@@ -1250,7 +1250,7 @@ union KeyVaultNetworkAccessTypes {
 /**
  * Whether to enable encryption at rest of Kubernetes resource objects using service-managed keys. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption.
  */
-@added(Versions.v2026_05_02_preview)
+@added(Versions.v2026_05_01)
 union InfrastructureEncryption {
   string,
 
@@ -1258,11 +1258,6 @@ union InfrastructureEncryption {
    * Encryption at rest of Kubernetes resource objects using service-managed keys is enabled. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption.
    */
   Enabled: "Enabled",
-
-  /**
-   * Encryption at rest of Kubernetes resource objects using service-managed keys is disabled. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption.
-   */
-  Disabled: "Disabled",
 }
 
 /**
@@ -3302,7 +3297,7 @@ model ManagedClusterSecurityProfile {
   /**
    * Encryption at rest of Kubernetes resource objects. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption
    */
-  @added(Versions.v2026_05_02_preview)
+  @added(Versions.v2026_05_01)
   kubernetesResourceObjectEncryptionProfile?: KubernetesResourceObjectEncryptionProfile;
 
   /**
@@ -3445,12 +3440,12 @@ model AzureKeyVaultKms {
 /**
  * Encryption at rest of Kubernetes resource objects using service-managed keys. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption.
  */
-@added(Versions.v2026_05_02_preview)
+@added(Versions.v2026_05_01)
 model KubernetesResourceObjectEncryptionProfile {
   /**
    * Whether to enable encryption at rest of Kubernetes resource objects using service-managed keys. More information on this can be found under https://aka.ms/aks/kubernetesResourceObjectEncryption.
    */
-  infrastructureEncryption?: InfrastructureEncryption = InfrastructureEncryption.Disabled;
+  infrastructureEncryption?: InfrastructureEncryption;
 }
 
 /**
